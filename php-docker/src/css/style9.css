@@ -1,0 +1,21 @@
+h1 {
+    color: red;
+}
+body {
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+strong {
+    color: red;
+}
+body {
+    color: white;
+    padding-left: 40%;
+}
+.button {
+    border: 6px groove green;
+    font-size: 15px;
+    color: white;
+    background-color: darkgreen;
+}

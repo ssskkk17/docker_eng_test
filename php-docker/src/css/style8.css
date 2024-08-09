@@ -1,0 +1,48 @@
+body {
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+form {
+    color: white;
+    padding-left: 40%;
+    font-size: 20px;
+}
+form div {
+    margin: 10px;
+}
+h1 {
+    color: red;
+    padding-left: 30px;
+}
+h3 {
+    color: yellow;
+    padding-left: 40%;
+}
+strong {
+    color: red;
+}
+.left {
+    border: 6px groove green;
+    font-size: 15px;
+    color: white;
+    background-color: darkgreen;
+    float: left;
+    margin-top: 10%;
+}
+.right {
+    border: 6px groove green;
+    font-size: 15px;
+    color: white;
+    background-color: darkgreen;
+    float: right;
+    margin-right: 80%;
+    margin-top: 10%;
+}
+.table {
+    color: white;
+    text-align: center;
+    height: auto;
+    width: 40%;
+    margin: auto;
+}

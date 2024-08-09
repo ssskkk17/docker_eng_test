@@ -1,0 +1,54 @@
+.button {
+    border: 6px groove green;
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+}
+body {
+    background-color: black;
+    height: 100%;
+    width:100%;
+}
+header ul li {
+    float: right;
+    list-style-type: none;
+    padding-right: 20px;
+}
+main {
+    height: 100%;
+    width: 100%;
+}
+h1 {
+    color: red;
+}
+h2 {
+    color: green;
+    text-align: center;
+}
+.start1 {
+    color: white;
+    border: 5px solid red;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    height: 200px;
+    width: 95%;
+} 
+.start2 {
+    color: white;
+    border: 5px solid green;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    height: 150px;
+    width: 95%;
+}
+footer {
+    background-color: dimgrey;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    height: auto;
+    width: 100%;
+}

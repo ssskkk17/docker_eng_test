@@ -1,0 +1,53 @@
+body {
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+form {
+    color: white;
+    padding-left: 40%;
+}
+h1 {
+    color: red;
+    padding-left: 30px;
+}
+h3 {
+    color: yellow;
+    padding-left: 40%;
+}
+[type="radio"] {
+    margin: 15px;
+    cursor: pointer;
+    margin: 10px;
+    transform: scale(1.5);
+    accent-color: green;
+}
+.search {
+    border: 6px groove green;
+    font-size: 15px;
+    color: white;
+    background-color: darkgreen;
+    margin-top: 15px;
+    margin-left: 10%;
+}
+.button {
+    border: 6px groove green;
+    font-size: 15px;
+    color: white;
+    background-color: darkgreen;
+    margin-right: 60%;
+}
+.table {
+    color: white;
+    text-align: center;
+    height: auto;
+    width: 40%;
+    margin: auto;
+}
+.button_2 {
+    border: 6px groove yellow;
+    font-size: 15px;
+    color: black;
+    background-color: yellowgreen;
+    margin-left: 10%;
+}

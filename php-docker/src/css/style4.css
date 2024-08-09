@@ -1,0 +1,42 @@
+body {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+h1 {
+    color: red;
+}
+.error {
+    color: red;
+    font-size: 20px;
+}
+form {
+    margin: 0auto;
+    width: 100%;
+    padding-left: 35%;
+}
+form label {
+    color: white;
+}
+form div {
+    padding: 10px;
+}
+.login {
+    border: 6px groove green;
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+    margin-left: 10%;
+}
+.button {
+    text-align: center;
+    border: 6px groove green;
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+    margin-left: 5%;
+    padding: 0;
+}
+p {
+    color: red;
+}
