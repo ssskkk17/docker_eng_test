@@ -2,8 +2,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - 80:80
-      - 443:443
+      - 9000:80
     environment:
       DOMAINS: 'https://docker-eng-test.onrender.com'
     volumes:
