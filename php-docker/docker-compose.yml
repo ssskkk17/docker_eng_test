@@ -11,8 +11,9 @@ services:
       
   app:
     build:
-      context: ./docker/php
+      context: .
       dockerfile: ./docker/php/Dockerfile
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eng_test
