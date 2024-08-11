@@ -12,7 +12,7 @@ services:
   app:
     build:
       context: ./docker/php
-      dockerfile: Dockerfile
+      dockerfile: ./docker/php/Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eng_test
