@@ -8,3 +8,5 @@ RUN apt-get update && apt-get install -y\
     zip \
     unzip \
     && docker-php-ext-install pdo_mysql
+
+WORKDIR /var/www
