@@ -1,6 +1,6 @@
 FROM php:8.1.18-fpm
 
-COPY Dockerfile php.ini* /usr/local/etc/php/
+COPY php.ini /usr/local/etc/php/
 
 RUN apt-get update && apt-get install -y\
     git \
@@ -8,5 +8,6 @@ RUN apt-get update && apt-get install -y\
     zip \
     unzip \
     && docker-php-ext-install pdo_mysql
+    yarn build
 
 WORKDIR /var/www
