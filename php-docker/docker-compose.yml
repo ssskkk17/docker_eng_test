@@ -28,7 +28,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 0000:3000
+      - 9000:3000
       
   mysql:
     image: mysql:8.0
