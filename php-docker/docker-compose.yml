@@ -5,6 +5,7 @@ services:
       - 0000:80
     environment:
       DOMAINS: 'https://docker-eng-test.onrender.com'
+      config.host = "https://docker-eng-test.onrender.com"
     volumes:
       - ./src:/var/www/html
       - ./docker/nginx:/etc/nginx/conf.d
