@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - 0000:443 
+      - 10000:0000
     environment:
       DOMAINS: 'docker-eng-test.onrender.com'
       config.host: "docker-eng-test.onrender.com"
