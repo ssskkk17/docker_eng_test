@@ -2,10 +2,10 @@ services:
   nginx:
     image: nginx
     ports:
-      - 0000:80
+      - 8000:80
     environment:
       DOMAINS: 'docker-eng-test.onrender.com'
-      config.host = "docker-eng-test.onrender.com"
+      config.host: "docker-eng-test.onrender.com"
     volumes:
       - ./src:/var/www/html
       - ./docker/nginx:/etc/nginx/conf.d
@@ -28,7 +28,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 3001:3000
+      - 0000:3000
       
   mysql:
     image: mysql:8.0
