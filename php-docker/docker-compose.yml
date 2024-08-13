@@ -18,8 +18,8 @@ services:
       dockerfile: ./docker/php/Dockerfile
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: eng_test
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       DOMAINS: 'docker-eng-test.onrender.com'
@@ -31,7 +31,7 @@ services:
       - 9000:3000
       
   mysql:
-    image: mysql:8.0
+    image: mysql:8.1
     container_name: mysql_testing
     restart: always
     environment:
