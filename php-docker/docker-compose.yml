@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - 8080:80
+      - 8080:0000
     environment:
       DOMAINS: 'docker-eng-test.onrender.com'
       config.host: "docker-eng-test.onrender.com"
@@ -22,13 +22,13 @@ services:
       MYSQL_DATABASE: eng_test
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      DOMAINS: 'https://docker-eng-test.onrender.com'
+      DOMAINS: 'docker-eng-test.onrender.com'
     volumes:
       - ./src:/var/www/html
     depends_on:
       - mysql
     ports:
-      - 3001:3000
+      - 9000:3000
       
   mysql:
     image: mysql:8.0
