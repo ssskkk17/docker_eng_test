@@ -12,7 +12,6 @@ RUN apt-get install -y \
     git \
     curl \
     zip \
-    unzip \
-    && docker-ext-install pdo_mysql
+    unzip 
     
 WORKDIR /var/www
