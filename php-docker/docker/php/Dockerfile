@@ -1,4 +1,4 @@
-FROM php:8.1.18 -fpm
+FROM php:8.1.18-fpm
 FROM nginx:1.25.0
 
 ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
