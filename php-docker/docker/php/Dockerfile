@@ -1,4 +1,4 @@
-FROM php:8.1.18-fpm
+FROM php:latest
 FROM nginx:latest
 
 ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y\
     curl \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql
+
+RUN docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www
