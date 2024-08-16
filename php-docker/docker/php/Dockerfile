@@ -1,4 +1,4 @@
-FROM php:8.0
+FROM php:latest
 FROM php:8.1.18-fpm-debian
 FROM nginx:latest
 
@@ -9,7 +9,7 @@ COPY ./php.ini /usr/local/etc/php
 COPY . .
 
 
-RUN apt-get update && apt-get install -y\
+RUN apt-get update && apt-get upgrade -y\ && apt-get install -y\
     git \
     curl \
     zip \
