@@ -1,4 +1,4 @@
-FROM php:8.0
+FROM php:8.1.18-debian
 FROM php:8.1.18-fpm-debian
 FROM nginx:latest
 
