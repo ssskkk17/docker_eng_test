@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y\
     curl \
     zip \
     unzip \
-    && \
-    docker-php-ext-install zip pdo_mysql
+
+RUN docker-php-ext-install zip pdo_mysql
     
 WORKDIR /var/www
