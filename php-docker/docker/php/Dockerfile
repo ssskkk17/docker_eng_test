@@ -1,12 +1,10 @@
-FROM php:latest
+FROM php:8.1.18-fpm
 FROM nginx:latest
 
 ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 ADD ./src /usr/share/nginx/html
 
 COPY ./php.ini /usr/local/etc/php
-
-RUN cd /etc/apt/sources.list.d/
 
 RUN apt update && apt-get install -y\
     git \
