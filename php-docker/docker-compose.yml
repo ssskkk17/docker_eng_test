@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   nginx:
     image: nginx:1.25.0
@@ -12,8 +10,6 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./docker/nginx:/etc/nginx/conf.d
-    depends_on:
-      - app
     networks:
       - nginx-proxy
       - default
