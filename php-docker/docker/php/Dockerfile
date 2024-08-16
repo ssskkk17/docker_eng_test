@@ -14,6 +14,5 @@ RUN apt-get update && apt-get install -y\
     curl \
     zip \
     unzip \
-    vim \
-    && docker-php-ext-install pdo_mysql mysqli
+    && docker-php-ext-install pdo_mysql
 WORKDIR /var/www
