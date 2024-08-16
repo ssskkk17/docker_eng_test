@@ -6,6 +6,8 @@ ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 ADD ./src /usr/share/nginx/html
 
 COPY ./php.ini /usr/local/etc/php
+COPY ..
+
 
 RUN apt-get update && apt-get install -y\
     git \
@@ -13,7 +15,5 @@ RUN apt-get update && apt-get install -y\
     zip \
     unzip \
     vim \
-    libpng-dev \
-    libpg-dev \
-    && docker-php-ext-install pdo_mysql mtsqli
+    && docker-php-ext-install pdo_mysql mysqli
 WORKDIR /var/www
