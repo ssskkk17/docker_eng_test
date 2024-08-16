@@ -1,4 +1,4 @@
-FROM php:latest-cli
+FROM php:7.2-cli
 FROM php:8.1.18-fpm
 FROM nginx:latest
 
