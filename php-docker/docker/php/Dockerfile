@@ -6,6 +6,7 @@ ADD ./src /usr/share/nginx/html
 
 COPY ./php.ini /usr/local/etc/php
 
+RUN apt-get update
 RUN apt update && apt-get install -y\
     git \
     curl \
