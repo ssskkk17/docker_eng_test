@@ -1,4 +1,4 @@
-FROM php:8.1.18-debian
+FROM php:8.0
 FROM php:8.1.18-fpm-debian
 FROM nginx:latest
 
@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y\
     curl \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install xml
+    vim \
+    libpng-dev \
+    libpg-dev \
+    && docker-php-ext-install pdo_mysql mtsqli
 WORKDIR /var/www
