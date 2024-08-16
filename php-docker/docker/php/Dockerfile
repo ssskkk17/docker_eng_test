@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -y\
     git \
     curl \
     zip \
-    unzip \
+    unzip 
     
 WORKDIR /var/www
