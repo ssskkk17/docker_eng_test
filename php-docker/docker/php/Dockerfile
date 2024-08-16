@@ -8,11 +8,11 @@ ADD ./src /usr/share/nginx/html
 COPY ./php.ini /usr/local/etc/php
 COPY . .
 
-
+RUN apt-get install php-mysql
 RUN apt-get update && apt-get install -y\
     git \
     curl \
     zip \
     unzip \
-    docker-php-ext-install pdo_mysql
+    && docker-php-ext-install pdo_mysql
 WORKDIR /var/www
