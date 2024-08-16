@@ -1,5 +1,5 @@
 FROM php:latest-cli
-FROM php:8.1.18-fpm-debian
+FROM php:8.1.18-fpm
 FROM nginx:latest
 
 ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
