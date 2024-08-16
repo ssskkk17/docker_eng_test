@@ -7,14 +7,11 @@ ADD ./src /usr/share/nginx/html
 
 COPY ./php.ini /usr/local/etc/php
 
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
-    
 RUN apt-get update && apt-get install -y\
     git \
     curl \
     zip \
     unzip \
     && docker-php-ext-install pdo_mysql
-
+RUN docker-php-ext-install xml
 WORKDIR /var/www
