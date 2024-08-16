@@ -6,13 +6,11 @@ ADD ./src /usr/share/nginx/html
 
 COPY ./php.ini /usr/local/etc/php
 
-RUN apt-get update
-RUN apt update && apt-get install -y\
+RUN apt-get update && apt-get install -y\
     git \
     curl \
     zip \
     unzip \
-
-RUN docker-php-ext-install pdo_mysql
+    && docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www
