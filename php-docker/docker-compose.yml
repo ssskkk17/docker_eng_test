@@ -27,7 +27,8 @@ services:
       DOMAINS: 'docker-eng-test.onrender.com'
     volumes:
       - ./src:/var/www/html
-      
+    depends_on:
+      - mysql
   mysql:
     image: mysql:8.1
     container_name: mysql_testing
