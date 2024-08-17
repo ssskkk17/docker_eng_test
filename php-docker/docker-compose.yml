@@ -14,8 +14,10 @@ services:
       - default
     depends_on:
       - app
+    expose:
+      - 80
     ports:
-      -80:80
+      - 80:80
       
   app:
     container_name: app
@@ -37,6 +39,8 @@ services:
       - mysql
     expose:
       - 9000
+    port:
+      - 9000:9000
       
   mysql:
     image: mysql:8.1
