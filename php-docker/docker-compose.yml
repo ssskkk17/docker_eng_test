@@ -1,6 +1,8 @@
 services:
   nginx:
     image: nginx:1.25.0
+    container_name: nginx;
+    build: .docker/nginx
     environment:
       DOMAINS: 'docker-eng-test.onrender.com'
       config.host: "docker-eng-test.onrender.com"
@@ -12,13 +14,18 @@ services:
       - default
     depends_on:
       - app
+    ports:
+      -80:80
       
   app:
+    container_name: app
     build:
       context: ./docker/php
       dockerfile: Dockerfile
     restart: always
     environment:
+      LANG: 'ja_JA.UTF-8'
+      TZ: 'Asia/Tpkyo'
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -28,6 +35,8 @@ services:
       - ./src:/var/www/html
     depends_on:
       - mysql
+    expose:
+      - 9000
       
   mysql:
     image: mysql:8.1
@@ -42,6 +51,8 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
       
 volumes:
     mysqldata:
