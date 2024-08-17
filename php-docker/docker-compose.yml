@@ -35,8 +35,6 @@ services:
       DOMAINS: 'docker-eng-test.onrender.com'
     volumes:
       - ./src:/var/www/html
-    depends_on:
-      - mysql
     expose:
       - 9000
     port:
