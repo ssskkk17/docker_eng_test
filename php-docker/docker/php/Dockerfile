@@ -7,12 +7,12 @@ COPY . .
 ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 ADD ./src /usr/share/nginx/html
 
-RUN apt-get update;
+RUN apt-get update
 RUN apt-get install -y \
     git \
     curl \
     zip \
     unzip \
-    docker-php-ext-install pdo_mysql
+    && docker-php-ext-install pdo_mysql
     
 WORKDIR /var/www
