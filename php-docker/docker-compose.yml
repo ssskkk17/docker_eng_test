@@ -10,7 +10,6 @@ services:
       - ./src:/var/www/html
       - ./docker/nginx:/etc/nginx/conf.d
     networks:
-      - nginx-proxy
       - default
     depends_on:
       - app
