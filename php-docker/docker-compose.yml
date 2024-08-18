@@ -7,16 +7,17 @@ services:
       DOMAINS: 'docker-eng-test.onrender.com'
       config.host: "docker-eng-test.onrender.com"
     volumes:
-      - ./src:/var/www/html
-      - ./docker/nginx:/etc/nginx/conf.d
+      - ./src:/usr/share/nginx/html
+      - ./docker/nginx:/etc/nginx/conf.d/default.conf
     networks:
       - default
     depends_on:
       - app
     expose:
-      - 80
+      - 8000
     ports:
-      - 80:80
+      - 8000:80
+      - 443:443
       
   app:
     container_name: app
@@ -36,8 +37,6 @@ services:
       - ./src:/var/www/html
     expose:
       - 9000
-    port:
-      - 9000:9000
       
   mysql:
     image: mysql:8.1
