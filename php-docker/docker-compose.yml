@@ -1,9 +1,9 @@
 services:
   nginx:
     image: nginx:1.25.0
-    container_name: nginx;
+    container_name: nginx
     build: 
-      context: ./docker/nginx
+      context: ./docker/nginx/Dockerfile
       dockerfile: Dockerfile
     environment:
       DOMAINS: 'docker-eng-test.onrender.com'
@@ -24,7 +24,7 @@ services:
   app:
     container_name: app
     build:
-      context: ./docker/php
+      context: ./docker/php/Dockerfile
       dockerfile: Dockerfile
     restart: always
     environment:
@@ -39,6 +39,8 @@ services:
       - ./src:/var/www/html
     ports:
       9000:9000
+    networks:
+      - default
       
   mysql:
     image: mysql:8.1
@@ -55,6 +57,8 @@ services:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - 3306:3306
+    networks:
+      - default
       
 volumes:
     mysqldata:
