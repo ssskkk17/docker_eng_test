@@ -11,9 +11,8 @@ services:
   dockerContext: .
   dockerfilePath: docker/php/Dockerfile
   rootDir: php-docker
-version: "1"
+  version: "1"
 
-services:
   nginx:
     image: nginx:1.25.0
     container_name: nginx
