@@ -1,6 +1,6 @@
-php:
-- name: docker_eng_test
-  runtime: docker
+- type: pserv
+  name: docker_eng_test
+  runtime: image
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   region: singapore
@@ -8,9 +8,9 @@ php:
   dockerfilePath: ./php-docker/docker/php/Dockerfile
   rootDir: php-docker
   
-databases:
-- name: docker_eng_test
-  runtime: docker
+- type: pserv
+  name: docker_eng_test
+  runtime: image
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   region: singapore
