@@ -12,7 +12,7 @@ services:
   dockerfilePath: docker/php/Dockerfile
   rootDir: php-docker
 
-   type: web
+- type: web
     image: nginx:1.25.0
     container_name: nginx
     build: 
@@ -30,9 +30,9 @@ services:
       - app
     ports:
       - 0000:80
-      - 443:443
+      - 0000:443
       
-  type: web
+      - type: web
     container_name: app
     build:
       context: ./docker/php/Dockerfile
@@ -53,7 +53,7 @@ services:
     networks:
       - default
       
-  type: web
+  - type: web
     image: mysql:8.1
     container_name: mysql_testing
     restart: always
