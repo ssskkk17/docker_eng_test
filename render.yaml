@@ -1,3 +1,23 @@
+php:
+  name: docker_eng_test
+  runtime: docker
+  repo: https://github.com/ssskkk17/docker_eng_test
+  plan: free
+  region: singapore
+  dockerContext: .
+  dockerfilePath: ./php-docker/docker/php/Dockerfile
+  rootDir: php-docker
+  
+mysql:
+  name: docker_eng_test
+  runtime: docker
+  repo: https://github.com/ssskkk17/docker_eng_test
+  plan: free
+  region: singapore
+  dockerContext: .
+  dockerfilePath: ./php-docker/docker/mysql/Dockerfile
+  rootDir: php-docker
+  
 services:
 - type: web
   name: docker_eng_test
@@ -10,24 +30,4 @@ services:
   region: singapore
   dockerContext: .
   dockerfilePath: ./php-docker/docker/nginx/Dockerfile
-  rootDir: php-docker
-
-- type: web
-  name: docker_eng_test
-  runtime: docker
-  repo: https://github.com/ssskkk17/docker_eng_test
-  plan: free
-  region: singapore
-  dockerContext: .
-  dockerfilePath: ./php-docker/docker/php/Dockerfile
-  rootDir: php-docker
-  
-- type: web
-  name: docker_eng_test
-  runtime: docker
-  repo: https://github.com/ssskkk17/docker_eng_test
-  plan: free
-  region: singapore
-  dockerContext: .
-  dockerfilePath: ./php-docker/docker/mysql/Dockerfile
   rootDir: php-docker
