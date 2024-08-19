@@ -1,7 +1,7 @@
 services:
 - type: web
   name: docker_eng_test
-  runtime: image
+  runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   envVars:
@@ -15,7 +15,7 @@ services:
 
 - type: worker
   name: docker_eng_test
-  runtime: image
+  runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   region: singapore
@@ -25,16 +25,10 @@ services:
   
 - type: worker
   name: docker_eng_test
-  runtime: image
+  runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   region: singapore
   dockerContext: .
   dockerfilePath: ./php-docker/docker/mysql/Dockerfile
   rootDir: php-docker
-  envVars:
-   -  MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: eng_test
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      TZ: 'Asia/Tokyo'
