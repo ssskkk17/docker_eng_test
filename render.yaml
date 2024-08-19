@@ -1,5 +1,5 @@
 php:
-  name: docker_eng_test
+- name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
@@ -8,8 +8,8 @@ php:
   dockerfilePath: ./php-docker/docker/php/Dockerfile
   rootDir: php-docker
   
-mysql:
-  name: docker_eng_test
+databases:
+- name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
