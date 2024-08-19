@@ -10,7 +10,7 @@ services:
     sync: false
   region: singapore
   dockerContext: .
-  dockerfilePath: docker/nginx/Dockerfile
+  dockerfilePath: ./php-docker/docker/nginx/Dockerfile
   rootDir: php-docker
 
 - type: worker
@@ -20,7 +20,7 @@ services:
   plan: free
   region: singapore
   dockerContext: .
-  dockerfilePath: docker/php/Dockerfile
+  dockerfilePath: ./php-docker/docker/php/Dockerfile
   rootDir: php-docker
   
 - type: worker
@@ -30,7 +30,7 @@ services:
   plan: free
   region: singapore
   dockerContext: .
-  dockerfilePath: docker/mysql/Dockerfile
+  dockerfilePath: ./php-docker/docker/mysql/Dockerfile
   rootDir: php-docker
   envVars:
    -  MYSQL_ROOT_PASSWORD: root
