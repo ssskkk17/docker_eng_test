@@ -7,13 +7,12 @@ services:
   envVars:
   - key: PORT
     value: 0000
-    sync: false
   region: singapore
   dockerContext: .
   dockerfilePath: ./php-docker/docker/nginx/Dockerfile
   rootDir: php-docker
 
-- type: worker
+- type: web
   name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
@@ -23,7 +22,7 @@ services:
   dockerfilePath: ./php-docker/docker/php/Dockerfile
   rootDir: php-docker
   
-- type: worker
+- type: web
   name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
