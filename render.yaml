@@ -1,7 +1,7 @@
 services:
 - type: web
   name: docker_eng_test
-  runtime: docker
+  runtime: image
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   envVars:
@@ -9,64 +9,32 @@ services:
     sync: false
   region: singapore
   dockerContext: .
-  dockerfilePath: docker/php/Dockerfile
+  dockerfilePath: docker/nginx/Dockerfile
   rootDir: php-docker
+  domains: docker-eng-test.onrender.com
 
 - type: web
-    image: nginx:1.25.0
-    container_name: nginx
-    build: 
-      context: ./docker/nginx/Dockerfile
-      dockerfile: Dockerfile
-    environment:
-      DOMAINS: 'docker-eng-test.onrender.com'
-      config.host: "docker-eng-test.onrender.com"
-    volumes:
-      - ./src:/usr/share/nginx/html
-      - ./docker/nginx:/etc/nginx/conf.d/default.conf
-    networks:
-      - default
-    depends_on:
-      - app
-    ports:
-      - 0000:80
-      - 0000:443
-      
-      - type: web
-    container_name: app
-    build:
-      context: ./docker/php/Dockerfile
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      LANG: 'ja_JA.UTF-8'
-      TZ: 'Asia/Tpkyo'
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      DOMAINS: 'docker-eng-test.onrender.com'
-    volumes:
-      - ./src:/var/www/html
-    ports:
-      9000:9000
-    networks:
-      - default
-      
-  - type: web
-    image: mysql:8.1
-    container_name: mysql_testing
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
+  name: docker_eng_test
+  runtime: image
+  repo: https://github.com/ssskkk17/docker_eng_test
+  plan: free
+  region: singapore
+  dockerContext: .
+  dockerfilePath: docker/php/Dockerfile
+  rootDir: php-docker
+  
+- type: web
+  name: docker_eng_test
+  runtime: image
+  repo: https://github.com/ssskkk17/docker_eng_test
+  plan: free
+  region: singapore
+  dockerContext: .
+  dockerfilePath: docker/mysql/Dockerfile
+  rootDir: php-docker
+  envVars:
+   -  MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eng_test
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       TZ: 'Asia/Tokyo'
-    volumes:
-      - mysqldata:/var/lib/mysql
-      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-    ports:
-      - 3306:3306
-    networks:
-      - default
