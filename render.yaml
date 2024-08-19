@@ -11,7 +11,6 @@ services:
   dockerContext: .
   dockerfilePath: docker/nginx/Dockerfile
   rootDir: php-docker
-  domains: docker-eng-test
 
 - type: web
   name: docker_eng_test
