@@ -6,13 +6,14 @@ services:
   plan: free
   envVars:
   - key: PORT
+    value: 0000
     sync: false
   region: singapore
   dockerContext: .
   dockerfilePath: docker/nginx/Dockerfile
   rootDir: php-docker
 
-- type: web
+- type: worker
   name: docker_eng_test
   runtime: image
   repo: https://github.com/ssskkk17/docker_eng_test
@@ -22,7 +23,7 @@ services:
   dockerfilePath: docker/php/Dockerfile
   rootDir: php-docker
   
-- type: web
+- type: worker
   name: docker_eng_test
   runtime: image
   repo: https://github.com/ssskkk17/docker_eng_test
