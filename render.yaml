@@ -3,7 +3,6 @@ services:
   name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
-  plan: free
   envVars:
   - key: PORT
     value: 0000
@@ -16,7 +15,6 @@ services:
   name: docker_eng_test
   runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
-  plan: free
   region: singapore
   dockerContext: .
   dockerfilePath: ./php-docker/docker/mysql/Dockerfile
