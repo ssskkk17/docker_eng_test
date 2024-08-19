@@ -14,7 +14,7 @@ services:
   
 - type: pserv
   name: docker_eng_test
-  runtime: image
+  runtime: docker
   repo: https://github.com/ssskkk17/docker_eng_test
   plan: free
   region: singapore
