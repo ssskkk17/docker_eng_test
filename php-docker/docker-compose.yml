@@ -1,49 +1,26 @@
 services:
   nginx:
-    image: nginx:1.25.0
-    container_name: nginx
-    build: 
-      context: ./docker/nginx/Dockerfile
-      dockerfile: Dockerfile
-    environment:
-      DOMAINS: 'docker-eng-test.onrender.com'
-      config.host: "docker-eng-test.onrender.com"
-    volumes:
-      - ./src:/usr/share/nginx/html
-      - ./docker/nginx:/etc/nginx/conf.d/default.conf
-    networks:
-      - default
-    depends_on:
-      - app
-    expose:
-      - 8080
+    image: nginx
     ports:
-      - 8080:80
-      - 443:443
-      
-  app:
-    container_name: app
-    build:
-      context: ./docker/php/Dockerfile
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      LANG: 'ja_JA.UTF-8'
-      TZ: 'Asia/Tpkyo'
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      DOMAINS: 'docker-eng-test.onrender.com'
+      - 80:80
     volumes:
       - ./src:/var/www/html
-    ports:
-      9000:9000
-    networks:
-      - default
+      - ./docker/nginx:/etc/nginx/conf.d
+      
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eng_test
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./src:/var/www/html
       
   mysql:
-    image: mysql:8.1
+    image: mysql:8.0
     container_name: mysql_testing
     restart: always
     environment:
@@ -55,10 +32,6 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-    ports:
-      - 3306:3306
-    networks:
-      - default
       
 volumes:
     mysqldata:
